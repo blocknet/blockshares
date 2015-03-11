@@ -328,7 +328,7 @@ Value exportdividendkeys(const json_spirit::Array& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "exportdividendkeys\n"
-            "Add the private keys associated with the Blackshares addresses to the dividend wallet. This wallet must be running and accept RPC commands.");
+            "Add the private keys associated with the Blockshares addresses to the dividend wallet. This wallet must be running and accept RPC commands.");
 
     if (pwalletMain->IsLocked())
         throw JSONRPCError(-13, "Error: Please enter the wallet passphrase with walletpassphrase first.");
