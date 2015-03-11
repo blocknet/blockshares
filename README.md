@@ -1,8 +1,8 @@
 
-BlackShares development tree
+BlockShares development tree
 ===========================
 
-Reimplementation of the Peershares concept (http://peershares.net/) for BlackCoin. A decentralized autonomous organization can create their own BlackCoin based blockchain and sell the tokens created during a PoW phase as shares of the organization. The organization is then able to pay dividends to the shareholders in form of (real) blackcoins.
+Reimplementation of the Peershares concept (http://peershares.net/) for any cryptocurrency. A decentralized autonomous organization can create their own cryptocurrency based blockchain and sell the tokens created during a PoW phase as shares of the organization. The organization is then able to pay dividends to the shareholders in form of (real) cryptocoins.
 
 See the Peershares github for more information: https://github.com/Peershares/Peershares
 
@@ -13,16 +13,16 @@ Creating a new share
 
 - Open src/shareparams.h with a text editor
 - Specify a custom message in line 26 and custom ports in lines 11-13
-- Compile and run blacksharesd
+- Compile and run blocksharesd
 - Copy the genesis block information from the terminal to lines 36-45 in shareparams.h
-- Recompile blacksharesd
+- Recompile blocksharesd
 
-Synchronizing BlackCoin with a share
+Synchronizing Coin with a share
 ===========================
 
-- Start a BlackCoin client with -rpcallowip=127.0.0.1 -server=1 and the blackshares client
-- Unlock both the BlackCoin and the share wallet (not only for staking)
-- Convert share keys into BlackCoin keys and import them in the running BlackCoin wallet
+- Start a Coin client with -rpcallowip=127.0.0.1 -server=1 and the blockshares client
+- Unlock both the Coin and the share wallet (not only for staking)
+- Convert share keys into Coin keys and import them in the running Coin wallet
  
   ./blacksharesd exportblackcoinkeys
 - The BlackCoin wallet now contains a new key for each share address
@@ -31,15 +31,15 @@ Synchronizing BlackCoin with a share
 Distributing dividends among shareholders
 ===========================
 
-- Start a BlackCoin client with -rpcallowip=127.0.0.1 -server=1 and the blackshares client
-- Unlock both the BlackCoin and the share wallet (not only for staking)
-- Show the distribution of X BlackCoin over all stake holders that have a nonzero balance since time T (unix time):
+- Start a Coin client with -rpcallowip=127.0.0.1 -server=1 and the blockshares client
+- Unlock both the Coin and the share wallet (not only for staking)
+- Show the distribution of X Coin over all stake holders that have a nonzero balance since time T (unix time):
  
-  ./blacksharesd distribute T X
+  ./blocksharesd distribute T X
 
 - Send coins according to distribution:
  
-  ./blacksharesd distribute T X true
+  ./blocksharesd distribute T X true
 
 
 Development process
