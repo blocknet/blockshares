@@ -61,10 +61,10 @@ bool AppInit(int argc, char* argv[])
             // First part of help message is specific to bitcoind / RPC client
             std::string strUsage = _("Version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  blacksharesd [options]                     " + "\n" +
-                  "  blacksharesd [options] <command> [params]  " + _("Send command to -server or blacksharesd") + "\n" +
-                  "  blacksharesd [options] help                " + _("List commands") + "\n" +
-                  "  blacksharesd [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  blocksharesd [options]                     " + "\n" +
+                  "  blocksharesd [options] <command> [params]  " + _("Send command to -server or blocksharesd") + "\n" +
+                  "  blocksharesd [options] help                " + _("List commands") + "\n" +
+                  "  blocksharesd [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -74,7 +74,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "blackshares:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "blockshares:"))
                 fCommandLine = true;
 
         if (fCommandLine)
